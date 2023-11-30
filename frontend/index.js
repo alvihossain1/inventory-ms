@@ -26,7 +26,7 @@ $("#createButton").click(function (e) {
     data: object,
     success: function (data) {
       console.log(data);
-      document.getElementById("outputCreate").innerHTML = data;
+      document.getElementById("outputCreate").innerHTML = `<h4> Data Inserted with ID: ${data[0].productID} </h4> ${table(data)}`;
     }
   });
 })
@@ -49,12 +49,14 @@ $("#fetchButtonID").click(function (e) {
   e.preventDefault();
   let id = document.getElementById("searchbyid").value
 
+  if(id == ""){
+    document.getElementById("outputFetchID").innerHTML = "Please enter id";
+    return
+  }
+
   let path = `http://localhost:4000/api/products:${id}`;
   $.get(path, function (data, status) {
-    // alert("Data: " + data + "\nStatus: " + status);
-    console.log(data)
-    document.getElementById("outputFetchID").innerHTML = JSON.stringify(data);
-
+    document.getElementById("outputFetchID").innerHTML = table(data);
   });
 })
 
@@ -85,8 +87,7 @@ $("#updateButtonID").click(function (e) {
     type: "PUT",
     data: object,
     success: function (data) {
-      console.log(data);
-      document.getElementById("outputUpdateID").innerHTML = data;
+      document.getElementById("outputUpdateID").innerHTML = table(data);
     }
   });
 })
@@ -118,6 +119,10 @@ $("#deleteButtonID").click(function (e) {
 
 // CUSTOM TABLE FUNCTION
 function table(data) {
+  if(data.length == 0){
+    console.log("DOESNT EXIST")
+    return "<h4> ID doesn't Exist </h4>";
+  }
   console.log(data)
   let str = "";
   for (var i = 0; i < data.length; i++) {
@@ -129,6 +134,7 @@ function table(data) {
       <td>${data[i].productDescription}</td>
       <td>${data[i].price}</td>
       <td>${data[i].quantity}</td>
+      <td>${data[i].type}</td>
     </tr>
     `;
   }
@@ -142,6 +148,7 @@ function table(data) {
       <th scope="col">Product Desc</th>
       <th scope="col">Price</th>
       <th scope="col">Quantity</th>
+      <th scope="col">Type</th>
     </tr>
   </thead>
   <tbody>

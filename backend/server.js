@@ -39,8 +39,10 @@ app.get('/', (req, res) => {
     res.send("<h1 style='text-align: center; background-color: olive;'>Server Running Okay</h1>")
 })
 
+
+ // CREATING PRODUCT
 app.post('/api/products', (req, res) => {
-    // CREATING PRODUCT
+   
     console.log(req.body);
 
     db.connect(function (err) {
@@ -51,7 +53,8 @@ app.post('/api/products', (req, res) => {
             try {
                 if (err) throw err;
                 console.log("SQL: ", results)
-                res.send(`Data Inserted with ID: ${results.insertId}, data = ${JSON.stringify(req.body)}`)
+                let object = Object.assign({"productID": results.insertId.toString()}, req.body)
+                res.send([object])
             }
             catch (err) {
                 res.send(err.message)
@@ -61,6 +64,7 @@ app.post('/api/products', (req, res) => {
     });
 })
 
+// FETCH PRODUCT
 app.get('/api/products', (req, res) => {
     db.connect(function (err) {
         console.log("Connected!");
@@ -81,6 +85,7 @@ app.get('/api/products', (req, res) => {
 
 })
 
+// FETCH PRODUCT BY ID
 app.get('/api/products:id', (req, res) => {
     let id = req.params['id'].replace(":", "");
     console.log(id)
@@ -103,6 +108,7 @@ app.get('/api/products:id', (req, res) => {
 
 })
 
+// UPDATE PRODUCT BY ID
 app.put('/api/products:id', (req, res) => {
     let id = req.params['id'].replace(":", "");
     console.log(req.body);
@@ -115,7 +121,9 @@ app.put('/api/products:id', (req, res) => {
             try {
                 if (err) throw err;
                 console.log("SQL: ", results)
-                res.send(`Success!, data = ${JSON.stringify(req.body)}`)
+                let object = Object.assign({"productID": id.toString()}, req.body)
+                console.log(object)
+                res.send([object])
             }
             catch (err) {
                 res.send(err.message)
@@ -126,7 +134,7 @@ app.put('/api/products:id', (req, res) => {
 
 })
 
-
+// DELETE PRODUCT BY ID
 app.delete('/api/products:id', (req, res) => {
     let id = req.params['id'].replace(":", "");
     console.log(id)

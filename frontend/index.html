@@ -12,9 +12,11 @@
 </head>
 
 <body>
-    <div class="container vh-100">                   
-            <!-- productID	productName	productDescription	price	quantity	type -->
-            <div class="container-fluid mt-5 mb-5">
+    <div class="p-3 bg-dark text-white text-center mb-3">
+        <h1>Inventory Management System</h1>
+    </div>
+    <div class="container vh-100">        
+        <div class="container-fluid mt-4 mb-5">
                 <h2>CREATE PRODUCT</h2> 
                 <div class="my-box p-3">
                     <div class="form-group my-3">
@@ -34,7 +36,7 @@
                         <input type="number" class="form-control" id="quantity" placeholder="Product Quantity">
                     </div>
                     <div class="form-group my-3">
-                        <label for="productDescription">Product Description</label>
+                        <label for="productDescription">Product Type</label>
                         <input type="text" class="form-control" id="type" placeholder="Product Description">
                     </div>
                     <button id="createButton" class="btn btn-dark my-3">Submit</button>
@@ -59,7 +61,7 @@
                 <div class="my-box p-3">   
                     <div class="form-group my-3">
                         <label for="productDescription">Insert ID</label>
-                        <input type="number" class="form-control my-3" id="searchbyid" placeholder="Product ID">
+                        <input type="number" class="form-control" id="searchbyid" placeholder="Product ID">
                     </div>                 
                     <button id="fetchButtonID" class="btn btn-dark my-3">Fetch Data</button>
                     <div id="outputFetchID" class="my-3">
@@ -92,7 +94,7 @@
                         <input type="number" class="form-control" id="uquantity" placeholder="Product Quantity">
                     </div>
                     <div class="form-group my-3">
-                        <label for="productDescription">Product Description</label>
+                        <label for="productDescription">Product Type</label>
                         <input type="text" class="form-control" id="utype" placeholder="Product Description">
                     </div>
                     <button id="updateButtonID" class="btn btn-dark my-3">Submit</button>
@@ -101,13 +103,12 @@
                     </div>
                 </div>
             </div>
-
-            <div class="container-fluid mb-5">
+            <div class="container-fluid pb-5">
                 <h2>DELETE PRODUCT BY ID</h2> 
                 <div class="my-box p-3">   
                     <div class="form-group my-3">
                         <label for="productDescription">Insert ID</label>
-                        <input type="number" class="form-control my-3" id="deletebyID" placeholder="Product ID">
+                        <input type="number" class="form-control" id="deletebyID" placeholder="Product ID">
                     </div>                 
                     <button id="deleteButtonID" class="btn btn-dark my-3">Delete Data</button>
                     <div id="outputDeleteID" class="">
@@ -115,6 +116,8 @@
                     </div>
                 </div>
             </div>
+
+            
     </div>
 </body>
 <script src="./index.js"></script>
