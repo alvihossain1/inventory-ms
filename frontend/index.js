@@ -26,7 +26,7 @@ $("#createButton").click(function (e) {
     data: object,
     success: function (data) {
       console.log(data);
-      document.getElementById("outputCreate").innerHTML = `<h4> Data Inserted with ID: ${data[0].productID} </h4> ${table(data)}`;
+      document.getElementById("outputCreate").innerHTML = `<h5> Data Inserted with ID: ${data[0].productID} </h5> ${table(data)}`;
     }
   });
 })
@@ -110,7 +110,7 @@ $("#deleteButtonID").click(function (e) {
     type: 'DELETE',
     success: function (data) {
       console.log(data)
-      document.getElementById("outputDeleteID").innerHTML = JSON.stringify(data);
+      document.getElementById("outputDeleteID").innerHTML = `<h5>${data}</h5>`;
     }
   });
 })
