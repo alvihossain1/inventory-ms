@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+    <div class="container vh-100">                   
+            <!-- productID	productName	productDescription	price	quantity	type -->
+            <div class="container-fluid mt-5 mb-5">
+                <h2>CREATE PRODUCT</h2> 
+                <div class="my-box p-3">
+                    <div class="form-group my-3">
+                        <label for="productName">Product Name</label>
+                        <input type="text" class="form-control" id="productName" placeholder="Product Name">
+                    </div>
+                    <div class="form-group my-3">
+                        <label for="productDescription">Product Description</label>
+                        <input type="text" class="form-control" id="productDescription" placeholder="Product Description">
+                    </div>
+                    <div class="form-group my-3">
+                        <label for="price">Product price</label>
+                        <input type="number" class="form-control" id="price" placeholder="Product Price">
+                    </div>
+                    <div class="form-group my-3">
+                        <label for="quantity">Product Quantity</label>
+                        <input type="number" class="form-control" id="quantity" placeholder="Product Quantity">
+                    </div>
+                    <div class="form-group my-3">
+                        <label for="productDescription">Product Description</label>
+                        <input type="text" class="form-control" id="type" placeholder="Product Description">
+                    </div>
+                    <button id="createButton" class="btn btn-dark my-3">Submit</button>
+                    <div id="outputCreate" class="my-3">
+
+                    </div>
+                </div>
+            </div>
+        
+            <div class="container-fluid mb-5">
+                <h2>FETCH PRODUCT</h2> 
+                <div class="my-box p-3">                    
+                    <button id="fetchButton" class="btn btn-dark my-3">Fetch Data</button>
+                    <div id="outputFetch" class="my-3">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid mb-5">
+                <h2>FETCH PRODUCT BY ID</h2> 
+                <div class="my-box p-3">   
+                    <div class="form-group my-3">
+                        <label for="productDescription">Insert ID</label>
+                        <input type="number" class="form-control my-3" id="searchbyid" placeholder="Product ID">
+                    </div>                 
+                    <button id="fetchButtonID" class="btn btn-dark my-3">Fetch Data</button>
+                    <div id="outputFetchID" class="my-3">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid mb-5">
+                <h2>UPDATE PRODUCT</h2> 
+                <div class="my-box p-3">
+                    <div class="form-group my-3">
+                        <label for="productName">Product ID</label>
+                        <input type="text" class="form-control" id="uproductID" placeholder="Product Name">
+                    </div>
+                    <div class="form-group my-3">
+                        <label for="productName">Product Name</label>
+                        <input type="text" class="form-control" id="uproductName" placeholder="Product Name">
+                    </div>
+                    <div class="form-group my-3">
+                        <label for="productDescription">Product Description</label>
+                        <input type="text" class="form-control" id="uproductDescription" placeholder="Product Description">
+                    </div>
+                    <div class="form-group my-3">
+                        <label for="price">Product price</label>
+                        <input type="number" class="form-control" id="uprice" placeholder="Product Price">
+                    </div>
+                    <div class="form-group my-3">
+                        <label for="quantity">Product Quantity</label>
+                        <input type="number" class="form-control" id="uquantity" placeholder="Product Quantity">
+                    </div>
+                    <div class="form-group my-3">
+                        <label for="productDescription">Product Description</label>
+                        <input type="text" class="form-control" id="utype" placeholder="Product Description">
+                    </div>
+                    <button id="updateButtonID" class="btn btn-dark my-3">Submit</button>
+                    <div id="outputUpdateID" class="my-3">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid mb-5">
+                <h2>DELETE PRODUCT BY ID</h2> 
+                <div class="my-box p-3">   
+                    <div class="form-group my-3">
+                        <label for="productDescription">Insert ID</label>
+                        <input type="number" class="form-control my-3" id="deletebyID" placeholder="Product ID">
+                    </div>                 
+                    <button id="deleteButtonID" class="btn btn-dark my-3">Delete Data</button>
+                    <div id="outputDeleteID" class="">
+
+                    </div>
+                </div>
+            </div>
+    </div>
+</body>
+<script src="./index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+</html>
