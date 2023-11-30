@@ -139,6 +139,7 @@ function table(data) {
     `;
   }
   return `
+  <div class="overflow-auto">
   <table class="table">
   <thead>
     <tr>
@@ -155,6 +156,7 @@ function table(data) {
     ${str}
   </tbody>
 </table>
+  </div>
   `;
 }
 
