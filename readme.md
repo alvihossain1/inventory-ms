@@ -32,10 +32,10 @@ This is a NodeJS, ExpressJS and HTML, CSS project which allows CRUD Operation on
 ## Sample Product JSON
 ```json
 {
-	"productName": "Potato",
-	"productDescription": "Nice fresh potato",
-	"price": 40.99,
-	"quantity": 40.99,
-	"type": 40.99
+	"productName": "F&D Glasses",
+	"productDescription": "Bright and blue glasses",
+	"price": 85.99,
+	"quantity": 12,
+	"type": "Watch"
 }
 ```

@@ -19,7 +19,7 @@ $("#createButton").click(function (e) {
     "quantity": `${quantity}`, "type": `${type}`
   };
 
-  let path = "http://localhost:4000/api/products";
+  let path = `http://localhost:4000/api/products`;
   $.ajax({
     url: path,
     type: "POST",
